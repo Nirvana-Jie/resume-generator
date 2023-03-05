@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import express from "express";
 
 //获取当前目录名
-const _dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 //判断是否是测试文件
 const isTest: string | undefined = process.env.VITEST;
@@ -53,7 +53,7 @@ export async function createServer(
     )
   }
 
-  app.use('*', async (req,res)=> {
+  app.use('*', async (req:any,res:any)=> {
     try{
         const url = req.originalUrl;
         let template, render;
