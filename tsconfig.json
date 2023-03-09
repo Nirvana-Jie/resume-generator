@@ -15,7 +15,18 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "~/*": ["types/*"]
+    }
   },
-  "include": ["src"],
+  "include": ["src/**/*", "types/*", "server.ts", "node_modules/vite/types/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
+  // "ts-node": {
+  //   "transpileOnly": true,
+  //   "compilerOptions": {
+  //     "module": "CommonJS"
+  //   }
+  // }
 }
